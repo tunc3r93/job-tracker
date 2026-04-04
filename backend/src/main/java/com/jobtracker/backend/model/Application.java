@@ -1,5 +1,7 @@
 package com.jobtracker.backend.model;
 
+import com.jobtracker.backend.model.JobPosting;
+
 import jakarta.persistence.*;
 import lombok.Data;
 import java.time.LocalDateTime;
@@ -21,4 +23,8 @@ public class Application {
     private ApplicationStatus status; // OFFEN, VERSCHICKT, ABGELEHNT
 
     private LocalDateTime createdAt = LocalDateTime.now();
+
+    @ManyToOne
+    @JoinColumn(name = "job_posting_id")
+    private JobPosting jobPosting;
 }
