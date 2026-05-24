@@ -203,7 +203,6 @@ Dieses Projekt ist lizenziert unter der MIT License. Siehe [LICENSE](LICENSE) f�
 
 **Tuncer Arici**
 - GitHub: [@tunc3r93](https://github.com/tunc3r93)
-- Email: blizgamez93@hotmail.de
 
 ---
 
@@ -217,5 +216,3 @@ Contributions sind willkommen! Bitte erstelle einen Fork, mache deine Änderunge
 - Aussagekräftige Commit-Messages auf Deutsch oder Englisch
 
 ---
-
-**Viel Spaß beim Lernen! 🚀**
