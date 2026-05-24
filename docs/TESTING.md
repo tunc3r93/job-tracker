@@ -15,22 +15,22 @@ Unit Tests überprüfen, ob einzelne Komponenten (Units) deines Codes korrekt fu
 
 ## Ordnerstruktur
 
-\\\
+```text
 backend/src/
 ├── main/java/com/jobtracker/backend/
-│   ├── controller/        ← Zu testende Controller
-│   ├── service/           ← Zu testende Services
-│   ├── repository/        ← Zu testende Repositories
-│   └── model/             ← Entities
+│   ├── controller/
+│   ├── service/
+│   ├── repository/
+│   └── model/
 │
-└── test/java/com/jobtracker/backend/     ← TEST-CODE HIER!
+└── test/java/com/jobtracker/backend/
     ├── controller/
     │   └── JobPostingControllerTest.java
     ├── service/
     │   └── JobPostingServiceTest.java
     └── repository/
         └── JobPostingRepositoryTest.java
-\\\
+```
 
 **Wichtige Regel:** Test-Klasse = Source-Klasse + Test
 
@@ -64,12 +64,12 @@ mvn test
 \\\
 
 ### Spezifische Test-Klasse
-\\\ash
+\\\bash
 mvn test -Dtest=JobPostingControllerTest
 \\\
 
 ### Mit Coverage Report
-\\\ash
+\\\bash
 mvn test jacoco:report
 start target/site/jacoco/index.html
 \\\
