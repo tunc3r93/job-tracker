@@ -1,11 +1,19 @@
-# Job Tracker
+# Job Tracker 📋
 
-Dieses Projekt ist ein persönliches Lern- und Übungsprojekt, in dem ich versuche, reale Problemstellungen mit Java umzusetzen.
+Ein **Full-Stack Learning-Projekt** zur Verfolgung von Bewerbungen und Job-Anwendungen. Dieses Projekt dient dazu, moderne Backend- und Frontend-Technologien praktisch zu erlernen und dabei reale Problemstellungen zu lösen.
 
-Der Fokus liegt darauf, praktische Erfahrungen in der Entwicklung von Anwendungen zu sammeln und dabei moderne Technologien und Konzepte kennenzulernen. Dazu gehören insbesondere:
+---
 
-- Backend-Entwicklung mit Spring
-- Softwarearchitektur und sauberes Design
-- Frontend-Entwicklung mit React
+## 🎯 Projektüberblick
 
-Ziel des Projekts ist es, mein Verständnis für die Zusammenarbeit von Backend und Frontend zu vertiefen und gleichzeitig praxisnah an meiner Entwicklung als Softwareentwickler zu arbeiten.
+**Job Tracker** hilft dabei, den Überblick über deine Bewerbungen zu behalten:
+- **Neue Jobs hinzufügen** → Tracking über alle Phasen
+- **Statuses aktualisieren** → Von Bewerbung bis Angebot oder Absage
+- **Übersichtliche UI** → Einfache Verwaltung deines Job-Hunting-Prozesses
+
+---
+
+## 🛠️ Tech Stack
+
+### Backend
+- **Java** m
