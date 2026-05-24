@@ -99,7 +99,8 @@ start target/site/jacoco/index.html
 ## Beispiele
 
 ### Controller Test Beispiel
-\\\java
+
+```java
 @WebMvcTest(JobPostingController.class)
 class JobPostingControllerTest {
     @Autowired private MockMvc mockMvc;
@@ -108,16 +109,17 @@ class JobPostingControllerTest {
     @Test
     void testGetAllJobs() throws Exception {
         when(repository.findAll()).thenReturn(List.of(testJob));
-        
+
         mockMvc.perform(get("/jobs"))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$[0].title").value("Java Developer"));
     }
 }
-\\\
+```
 
 ### Service Test Beispiel
-\\\java
+
+```java
 @ExtendWith(MockitoExtension.class)
 class JobPostingServiceTest {
     @Mock private JobPostingRepository repository;
@@ -126,14 +128,14 @@ class JobPostingServiceTest {
     @Test
     void testCreateJob() {
         when(repository.save(any())).thenReturn(testJob);
-        
+
         JobPosting result = service.createJob(newJob);
-        
+
         assertNotNull(result);
         verify(repository, times(1)).save(any());
     }
 }
-\\\
+```
 
 ## Checkliste für neue Tests
 
