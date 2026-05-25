@@ -24,7 +24,7 @@ const AppContent: React.FC = () => {
   }
 
   return (
-    <div className="app">
+    <div className={`app app--navbar-${navbarPosition.toLowerCase()}`}>
       <Navbar position={navbarPosition} />
       <main className="app__main">
         <h2>Willkommen zu Job Tracker!</h2>
@@ -39,8 +39,4 @@ export const App: React.FC = () => {
   return (
     <NavbarProvider userId="test-user-1">
       <AppContent />
-    </NavbarProvider>
-  );
-};
-
-export default App;
+    <
