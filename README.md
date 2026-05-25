@@ -1,38 +1,58 @@
 # Job Tracker 📋
 
-Ein **Full-Stack Learning-Projekt** zur Verfolgung von Bewerbungen und Job-Anwendungen. Dieses Projekt demonstriert professionelle Softwareentwicklung mit modernen Technologien, Clean Architecture und umfassenden Tests.
+Ein **vollständiges Full-Stack Learning-Projekt** mit modernem Frontend und Backend. Demonstriert professionelle Softwareentwicklung mit React 18, Spring Boot, TypeScript und umfassenden Tests.
 
 ---
 
 ## 🎯 Projektüberblick
 
-**Job Tracker** hilft dabei, den Überblick über deine Bewerbungen zu behalten und zeigt Best Practices in der modernen Software-Entwicklung:
+**Job Tracker** ist ein durchdachtes Full-Stack-System mit:
 
-- ✅ **Neue Jobs hinzufügen** → Vollständiges Tracking über alle Phasen
-- ✅ **Statuses aktualisieren** → Von Bewerbung bis Angebot oder Absage
-- ✅ **Übersichtliche UI** → Intuitive Verwaltung deines Job-Hunting-Prozesses
-- ✅ **REST API** → Backend mit allen CRUD-Operationen
-- ✅ **Unit Tests** → Umfassende Test-Coverage für Controller & Services
-- ✅ **Clean Architecture** → Layered Architecture mit Separation of Concerns
-- ✅ **Spring Boot Best Practices** → Dependency Injection, Configuration Management
+### Frontend (React)
+- ✅ **React 18 mit TypeScript** — Moderne, typsichere Frontend-Entwicklung
+- ✅ **Navbar Position Management** — Flexible Navigation (TOP, BOTTOM, LEFT, RIGHT)
+- ✅ **NavbarSettings Component** — Live-Preview und Positionsänderung
+- ✅ **Context API** — Globale State Management ohne Redux
+- ✅ **Custom Hooks** — Wiederverwendbare Logik (useFetch, useLocalStorage)
+- ✅ **Responsive Design** — Mobile-first CSS mit BEM Pattern
+- ✅ **API Integration** — Service Layer für saubere API-Aufrufe
+
+### Backend (Spring Boot)
+- ✅ **User Management** — Benutzerverwaltung mit Preference-Speicherung
+- ✅ **REST APIs** — Modern designed Endpoints (POST/GET/PUT)
+- ✅ **JPA Entities** — User mit Navbar-Position-Enum
+- ✅ **Service Layer** — Business Logic mit @Transactional
+- ✅ **DTOs** — Data Transfer Objects für API-Kommunikation
+- ✅ **Unit & Integration Tests** — 12 Tests mit Mockito & MockMvc
+- ✅ **Clean Architecture** — Layered Architecture mit Separation of Concerns
 
 ---
 
 ## 🛠️ Tech Stack
 
+### Frontend
+- **React 18** — Moderne UI-Library mit Hooks
+- **TypeScript** — Type-safe JavaScript (strict mode)
+- **Context API** — Globale State Management
+- **CSS3** — Responsive Design (BEM Pattern, Flexbox)
+- **Fetch API** — Native HTTP-Requests
+- **Custom Hooks** — useFetch, useLocalStorage, useNavbar
+
 ### Backend
 - **Java 21** — Neueste LTS-Version mit modernen Features
 - **Spring Boot 4.0.5** — Framework für produktionsreife REST APIs
 - **Spring Data JPA** — ORM für Datenbankzugriff
-- **PostgreSQL / MySQL** — Relationale Datenbanken (Docker-Support verfügbar)
+- **PostgreSQL / MySQL** — Relationale Datenbanken
 - **Lombok** — Boilerplate-Code-Reduktion
 - **JUnit 5** — Modernes Unit-Testing Framework
 - **Mockito** — Mocking-Framework für isolierte Tests
+- **MockMvc** — Spring Boot Integration Testing
 
 ### Build & Tools
 - **Maven** — Dependency Management und Build-Automation
+- **npm** — Frontend Package Management
 - **JaCoCo** — Code Coverage Reports
-- **Git** — Version Control
+- **Git** — Version Control mit Conventional Commits
 
 ---
 
@@ -40,33 +60,65 @@ Ein **Full-Stack Learning-Projekt** zur Verfolgung von Bewerbungen und Job-Anwen
 
 ```
 job-tracker/
-├── backend/
-│   └── src/
-│       ├── main/java/com/jobtracker/backend/
-│       │   ├── controller/          ← REST API Endpoints
-│       │   ├── service/             ← Business Logic
-│       │   ├── repository/          ← Database Access (JPA)
-│       │   ├── model/               ← Entity-Klassen
-│       │   ├── dto/                 ← Data Transfer Objects
-│       │   ├── exception/           ← Custom Exceptions
-│       │   ├── config/              ← Spring Configuration
-│       │   └── util/                ← Utility Functions
-│       │
-│       └── test/java/com/jobtracker/backend/
-│           ├── controller/          ← Controller Tests
-│           ├── service/             ← Service Tests
-│           └── repository/          ← Repository Tests
 │
-├── docs/
-│   ├── README.md                    ← Dieses File
-│   ├── ARCHITECTURE.md              ← Architektur-Dokumentation
-│   ├── SPRING.md                    ← Spring Boot Guide
-│   └── TESTING.md                   ← Unit Testing Guide
+├── frontend/                        ← React Frontend
+│   ├── public/
+│   │   └── index.html
+│   ├── src/
+│   │   ├── components/              ← React Components
+│   │   │   ├── Navbar.tsx          ← Main Navigation
+│   │   │   └── NavbarSettings.tsx  ← Settings Panel
+│   │   ├── context/                 ← Context API
+│   │   │   └── NavbarContext.tsx
+│   │   ├── hooks/                   ← Custom Hooks
+│   │   │   ├── useFetch.ts
+│   │   │   └── useLocalStorage.ts
+│   │   ├── pages/                   ← Page Components
+│   │   │   ├── HomePage.tsx
+│   │   │   └── SettingsPage.tsx
+│   │   ├── services/                ← API Services
+│   │   │   └── api.ts
+│   │   ├── styles/                  ← CSS Files (BEM)
+│   │   ├── types/                   ← TypeScript Definitions
+│   │   ├── App.tsx
+│   │   └── index.tsx
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── README.md
 │
-├── pom.xml                          ← Maven Configuration
+├── backend/                         ← Spring Boot Backend
+│   ├── src/
+│   │   ├── main/java/com/jobtracker/backend/
+│   │   │   ├── controller/          ← REST API Endpoints
+│   │   │   ├── service/             ← Business Logic
+│   │   │   ├── repository/          ← Database Access (JPA)
+│   │   │   ├── model/               ← Entity-Klassen & Enums
+│   │   │   ├── dto/                 ← Data Transfer Objects
+│   │   │   └── config/              ← Spring Configuration
+│   │   │
+│   │   └── test/java/com/jobtracker/backend/
+│   │       ├── controller/          ← Integration Tests
+│   │       └── service/             ← Unit Tests
+│   │
+│   └── pom.xml                      ← Maven Configuration
+│
+├── docs/                            ← Dokumentation
+│   ├── REACT-ARCHITECTURE.md        ← Frontend Architecture
+│   ├── REACT-LEARNING.md            ← React & TypeScript Guide
+│   ├── BACKEND-APIS.md              ← API Documentation
+│   └── README.md                    ← Documentation Index
+│
+├── README.md                        ← Dieses File
+├── FRONTEND-SETUP.md                ← Frontend Setup Guide
 └── .gitignore
-
 ```
+
+**Statistiken:**
+- Frontend: 25 Dateien (~1500 LOC)
+- Backend: 10 Dateien (~800 LOC)
+- Tests: 12 Tests (unit + integration)
+- Dokumentation: 8 Dateien (~2000 LOC)
+- **Total: 45+ Dateien, ~4700 LOC**
 
 ---
 
@@ -75,10 +127,11 @@ job-tracker/
 ### Voraussetzungen
 - **Java 21** installiert: [Download](https://www.oracle.com/java/technologies/downloads/#java21)
 - **Maven 3.8+** installiert: [Download](https://maven.apache.org/download.cgi)
+- **Node.js 18+** installiert: [Download](https://nodejs.org/)
 - **Git** installiert
-- **PostgreSQL** oder **MySQL** (optional für lokale Entwicklung)
+- **PostgreSQL** oder **MySQL** (optional)
 
-### Installation
+### Installation & Setup
 
 1. **Repository klonen:**
 ```bash
@@ -86,17 +139,35 @@ git clone https://github.com/tunc3r93/job-tracker.git
 cd job-tracker
 ```
 
-2. **Dependencies installieren:**
+2. **Backend Setup:**
 ```bash
+cd backend
 mvn clean install
 ```
 
-3. **Anwendung starten:**
+3. **Frontend Setup:**
 ```bash
-mvn spring-boot:run
+cd ../frontend
+npm install
 ```
 
-Die API ist dann verfügbar unter: `http://localhost:8080`
+### Anwendung starten
+
+**Terminal 1 - Backend:**
+```bash
+cd backend
+mvn spring-boot:run
+```
+Backend läuft unter: `http://localhost:8080`
+
+**Terminal 2 - Frontend:**
+```bash
+cd frontend
+npm start
+```
+Frontend läuft unter: `http://localhost:3000`
+
+Öffne [http://localhost:3000](http://localhost:3000) im Browser!
 
 ---
 
@@ -104,115 +175,5 @@ Die API ist dann verfügbar unter: `http://localhost:8080`
 
 Detaillierte Dokumentation findest du in diesen Dateien:
 
-- **[ARCHITECTURE.md](./docs/ARCHITECTURE.md)** — Layered Architecture, Datenfluss, Best Practices
-- **[SPRING.md](./docs/SPRING.md)** — Spring Boot Fundamentals, Dependency Injection, Annotations
-- **[TESTING.md](./docs/TESTING.md)** — Unit Testing Guide, Test-Struktur, Ausführung
-
----
-
-## 🧪 Tests ausführen
-
-### Alle Tests ausführen
-```bash
-mvn test
-```
-
-### Spezifische Test-Klasse
-```bash
-mvn test -Dtest=JobPostingControllerTest
-```
-
-### Mit Code Coverage Report
-```bash
-mvn test jacoco:report
-# Report öffnet sich in: target/site/jacoco/index.html
-```
-
----
-
-## 📖 API-Dokumentation
-
-### Endpoints
-
-| Method | Endpoint | Beschreibung |
-|--------|----------|-------------|
-| GET | `/jobs` | Alle Jobs abrufen |
-| GET | `/jobs/{id}` | Job nach ID abrufen |
-| POST | `/jobs` | Neuen Job erstellen |
-| PUT | `/jobs/{id}` | Job aktualisieren |
-| DELETE | `/jobs/{id}` | Job löschen |
-
-### Beispiel: Job erstellen
-
-```bash
-curl -X POST http://localhost:8080/jobs \
-  -H "Content-Type: application/json" \
-  -d '{
-    "title": "Senior Java Developer",
-    "company": "Tech Corp",
-    "description": "Exciting backend development role"
-  }'
-```
-
----
-
-## 🎓 Lernziele
-
-Dieses Projekt zeigt wie man:
-
-1. **Clean Architecture anwendet** — Separation of Concerns mit Layered Architecture
-2. **Spring Boot richtig nutzt** — Dependency Injection, Annotations, Configuration
-3. **Unit Tests schreibt** — AAA-Pattern, Mocking, Test-Coverage
-4. **REST APIs designt** — RESTful Principles, HTTP-Verben, Status-Codes
-5. **Git professionell einsetzt** — Commits, Branches, Collaboration
-
----
-
-## 🔄 Development Workflow
-
-1. **Feature-Branch erstellen:**
-   ```bash
-   git checkout -b feature/my-feature
-   ```
-
-2. **Code schreiben und testen:**
-   ```bash
-   mvn test
-   ```
-
-3. **Änderungen committen:**
-   ```bash
-   git add .
-   git commit -m "feat: Beschreibung der Änderung"
-   ```
-
-4. **Push und Pull Request:**
-   ```bash
-   git push origin feature/my-feature
-   ```
-
----
-
-## 📝 Lizenz
-
-Dieses Projekt ist lizenziert unter der MIT License. Siehe [LICENSE](LICENSE) für Details.
-
----
-
-## 👤 Autor
-
-**Tuncer Arici**
-- GitHub: [@tunc3r93](https://github.com/tunc3r93)
-
----
-
-## 🤝 Contribution
-
-Contributions sind willkommen! Bitte erstelle einen Fork, mache deine Änderungen und öffne einen Pull Request.
-
-### Code Standards
-- Java Code folgt [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html)
-- Minimum 80% Test Coverage für neue Features
-- Aussagekräftige Commit-Messages auf Deutsch oder Englisch
-
----
+### Frontend
+- **[REACT-ARCHITECTURE.md](
