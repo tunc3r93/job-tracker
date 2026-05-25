@@ -1,6 +1,6 @@
 package com.jobtracker.backend.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
@@ -37,19 +37,14 @@ public class User {
         updatedAt = LocalDateTime.now();
     }
 
-    // Getters and Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
-
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
-
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
-
     public NavbarPosition getNavbarPosition() { return navbarPosition; }
     public void setNavbarPosition(NavbarPosition navbarPosition) { this.navbarPosition = navbarPosition; }
-
     public LocalDateTime getCreatedAt() { return createdAt; }
     public LocalDateTime getUpdatedAt() { return updatedAt; }
 }
