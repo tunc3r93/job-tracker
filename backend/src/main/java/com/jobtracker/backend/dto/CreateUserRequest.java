@@ -1,7 +1,7 @@
 package com.jobtracker.backend.dto;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 
 public class CreateUserRequest {
     @NotBlank(message = "Email is required")
@@ -13,7 +13,6 @@ public class CreateUserRequest {
 
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
-
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
 }

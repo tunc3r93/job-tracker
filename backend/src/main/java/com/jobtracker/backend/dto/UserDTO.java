@@ -18,15 +18,6 @@ public class UserDTO {
         return dto;
     }
 
-    public User toEntity() {
-        User user = new User();
-        user.setEmail(email);
-        user.setName(name);
-        user.setNavbarPosition(navbarPosition);
-        return user;
-    }
-
-    // Getters and Setters
     public Long getId() { return id; }
     public String getEmail() { return email; }
     public String getName() { return name; }

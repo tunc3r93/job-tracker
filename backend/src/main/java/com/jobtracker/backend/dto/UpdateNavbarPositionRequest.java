@@ -1,7 +1,7 @@
 package com.jobtracker.backend.dto;
 
 import com.jobtracker.backend.model.NavbarPosition;
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 public class UpdateNavbarPositionRequest {
     @NotNull(message = "Position is required")
