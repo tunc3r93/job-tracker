@@ -1,0 +1,36 @@
+.navbar-settings {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.navbar-settings__options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.navbar-settings__button {
+  padding: 15px;
+  border: 2px solid #ddd;
+  background: white;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.navbar-settings__button--active {
+  border-color: #007bff;
+  background: #f0f8ff;
+}
+
+.navbar-settings__error {
+  color: #d32f2f;
+  margin-top: 10px;
+}
+
+.navbar-settings__loading {
+  color: #1976d2;
+  margin-top: 10px;
+}
